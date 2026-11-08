@@ -3,11 +3,14 @@
 
 using namespace std;
 using namespace reg;
-int main()//int argc, const char** args)
+//int main()
+int main(int argc, const char** args)
 {
-//    if(argc>=3) {
-        const _str pat("(rpool(/[^/]+){0,})"), file("/etc/fstab");
-//        const _str pat(args[1]), file(args[2]);
+    cout << args[0];
+    if(argc>=2) cout << args[1];
+    if(argc>=3) {
+//        const _str pat("(rpool(/[^/]+){0,})"), file("/etc/fstab");
+        const _str pat(args[1]), file(args[2]);
         _rex rx(pat);
         reg_reader reader(rx,file,64);
         while(reader.isGood())
@@ -17,6 +20,6 @@ int main()//int argc, const char** args)
             cout << "\n";
         }
         return 0;
-//    }
-//    return 1;
+    }
+    return 1;
 }

@@ -11,7 +11,7 @@
 				<Option object_output="obj/Debug/" />
 				<Option type="1" />
 				<Option compiler="gcc" />
-				<Option parameters='&quot;^rpool&quot; /etc/fstab' />
+				<Option parameters='&quot;^(rpool(/[^/\\s]+){0,})\\s&quot; /etc/fstab' />
 				<Compiler>
 					<Add option="-g" />
 				</Compiler>

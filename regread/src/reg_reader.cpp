@@ -46,23 +46,24 @@ void reg_reader::contRead()
     {
         is.read(line,sz);
         ss << line;
-        std::smatch sm;
-        if(extractMatch(sm,ss.str())) break;
     }
+    std::smatch sm;
+    extractMatch(sm,ss.str());
 }
 
 bool reg_reader::extractMatch(std::smatch& sm, const _str& tmp)
 {
-    if(std::regex_search(tmp,sm,reg))
+    unsigned int lsz = mlst.size();
+    while(std::regex_search(tmp,sm,reg))
     {
-        const _str mtch = sm.str(0);
+        const _str& mtch = sm.str(0);
 		mlst.push_back(mtch);
-		unsigned int pos = sm.position(0) + mtch.length();
-		if(pos<tmp.length()) ss.str(tmp.substr(pos));
-		else ss.str("");
-		return true;
+//		unsigned int pos = sm.position(0) + mtch.length();
+//		if(pos<tmp.length()) ss.str(tmp.substr(pos));
+//		else ss.str("");
+//		return true;
     }
-    return false;
+    return lsz!=mlst.size();
 }
 
 bool reg_reader::is_open() const
