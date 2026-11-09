@@ -27,3 +27,17 @@
 1794060394 source:/home/stream/git/code-blocks/regread/src/reg_reader.cpp
 	"../include/reg_reader.h"
 
+1794221608 source:/home/fun_gab/git/code-blocks/regread/main.cpp
+	"include/reg_reader.h"
+	<iostream>
+
+1793881340 /home/fun_gab/git/code-blocks/regread/include/reg_reader.h
+	<fstream>
+	<sstream>
+	<regex>
+	<list>
+	<filesystem>
+
+1794221608 source:/home/fun_gab/git/code-blocks/regread/src/reg_reader.cpp
+	"../include/reg_reader.h"
+
